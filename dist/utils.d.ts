@@ -1,0 +1,12 @@
+import { TokenInfo, TokenList } from '@uniswap/token-lists';
+import { ChainId } from './constants/chainId';
+import { Contract } from 'web3-eth-contract';
+export declare type TokenListOrFetchableTokenList = TokenList | string;
+export declare function compareTokenInfos(t1: TokenInfo, t2: TokenInfo): 1 | -1;
+export declare function getTokenList(l1TokenListOrPathOrUrl: TokenListOrFetchableTokenList): Promise<TokenList>;
+export declare const getTokenListObjFromUrl: (url: string) => Promise<TokenList>;
+export declare const getTokenListObjFromLocalPath: (path: string) => Promise<TokenList>;
+export declare const getTokenListObj: (pathOrUrl: string) => Promise<TokenList>;
+export declare const isTokenList: (obj: any) => void;
+export declare function getRpcUrl(chainId: ChainId): string;
+export declare function getTokenSymbolFromContract(tokenContract: Contract): Promise<[any]>;
